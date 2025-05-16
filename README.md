@@ -21,10 +21,26 @@ FramePack is an open-source project by [lllyasviel](https://github.com/lllyasvie
 
 ## 🛠 Prerequisites
 
-- Linux (tested on Ubuntu 22.04)
-- [Docker](https://docs.docker.com/engine/install/) (with NVIDIA Container Toolkit)
-- NVIDIA GPU with drivers installed
-- [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+> **Important for WSL 2 Users**: Docker Desktop must be installed and properly configured with WSL 2 integration to enable GPU passthrough to containers. The Linux-native Docker Engine in WSL 2 does not support GPU acceleration.
+
+### System Requirements
+- **Operating System**: Linux (tested on Ubuntu 22.04)
+  - Base Docker image: `ubuntu:22.04`
+- **Docker**: Latest version with NVIDIA Container Toolkit
+- **NVIDIA Drivers**: Compatible with CUDA 12.1.1
+- **NVIDIA Container Toolkit**: Latest version
+
+### Software Versions
+- **CUDA**: 12.1.1
+- **cuDNN**: 9 (for CUDA 12.x)
+- **Python**: 3.10
+- **PyTorch**: Built with CUDA 12.6 support
+- **Base Image**: `nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04`
+
+### Hardware
+- **GPU**: NVIDIA GPU with compute capability 3.5 or higher
+- **Memory**: Minimum 8GB GPU RAM recommended
+- **Storage**: At least 20GB free space for models and dependencies
 
 ## 🏗 Installation
 
